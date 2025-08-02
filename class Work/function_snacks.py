@@ -11,5 +11,13 @@ def cal_future_investment(investment_amount, monthly_rate,amount_of_years):
 	numberOfMonths = 12 * amount_of_years
 	future_investment_value = (investment_amount *(1+monthly_rate))**numberOfMonths
 	return future_investment_value
-		
-		
+
+def only_floats(firstNumber,secondNumber):
+	if type(firstNumber) == str or type(secondNumber) == str or firstNumber< 0 or secondNumber < 0:
+		raise ValueError
+
+	if type(firstNumber) == float and type(secondNumber) == float :
+		return 2
+	elif type(firstNumber) == float or type(secondNumber) == float :
+		return 1
+	else : return 0

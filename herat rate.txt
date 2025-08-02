@@ -1,2 +1,0 @@
-userage = int(input("Enter Your Age"))
-heartratecall = 220 - userage

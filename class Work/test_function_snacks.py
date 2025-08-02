@@ -38,10 +38,32 @@ class TestFunctionFutureInvestment(unittest.TestCase):
 	def test_that_cal_future_investment_returns_correct_result(self):
 		result = function_snacks.cal_future_investment(200,0.05,1)
 		self.assertEqual(result,7.355827511386641e+27)
-	
-	
-	
-		
+
+
+class TestFuntionOnlyFloat(unittest.TestCase):
+
+	def test_that_only_float_firstnumber_take_in_incorrect_value(self):
+		self.assertRaises(ValueError,function_snacks.only_floats,'firstNumber',2.2)
+
+	def test_that_firstnumber_take_in_incorrect_value(self):
+		self.assertRaises(ValueError,function_snacks.only_floats,'2.2',"secondNumber")
+
+	def test_that_only_floats_return_2_for_two_float_input(self):
+		result = function_snacks.only_floats(2.2,1.1)
+		self.assertEqual(result , 2)
+
+	def test_that_only_floats_return_1_for_one_float_input_and_one_int_input(self):
+		result = function_snacks.only_floats(2.2,1)
+		self.assertEqual(result , 1)
+
+	def test_that_only_floats_return_0_for_none_float_input(self):
+		result = function_snacks.only_floats(2,1)
+		self.assertEqual(result , 0)
+
+	def test_that_only_floats_return_error_for_negative_number(self):
+		self.assertRaises(ValueError,function_snacks.only_floats, -1,-1)
+		 	
+		 	
 	
 		
 	
