@@ -26,5 +26,16 @@ num = list(map(sum,number_value))
 print(num)
 
 
+number_value2 = [ [2, 3, 4],  [1, 5, 7],  [4, 6, 8] ]
+new_list = []
+for index ,value in enumerate(number_value2):
+	sumInner = 0
+	for innerindex,number in enumerate(value):
+		sumInner += number_value2[innerindex][index]
+	new_list.append(sumInner)
+print(new_list)
+		
+	
+
 
 
